@@ -15,22 +15,25 @@ function verificarIdentificacao() {
       document.getElementById('nome').required = false; // Remove a obrigatoriedade
     }
   }
-  
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configurações do banco de dados
-const servidor = 'localhost';
-const usuario = 'seu_usuario';
-const senha = 'sua_senha';
-const banco = 'nome_do_banco';
-
-// Criando conexão
 const conn = mysql.createConnection({
-    host: servidor,
-    user: usuario,
-    password: senha,
-    database: banco
+    host: 'sql313.infinityfree.com',  // Host do MySQL fornecido pela InfinityFree
+    user: 'if0_38620339',             // Nome do usuário do banco
+    password: 'pass',        // Senha do banco
+    database: 'if0_38620339_XXX',     // Nome do banco de dados (substitua pelo nome correto do banco criado no painel)
+});
+
+// Verificar conexão
+conn.connect((err) => {
+    if (err) {
+        console.error('Erro ao conectar ao banco de dados:', err);
+        return;
+    }
+    console.log('Conexão bem-sucedida ao banco de dados!');
 });
 
 // Verificando conexão
