@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css.css">
+  <title>Formulário de Pesquisa</title>
+  
+</head>
+<body>
+  <h1>Formulário de Pesquisa</h1>
+  
+  <!-- Botões de rádio para decidir se deseja se identificar -->
+  <label>Você deseja se identificar?</label>
+  <div>
+    <input type="radio" id="identificarSim" name="identificacao" value="sim" onchange="verificarIdentificacao()">
+    <label for="identificarSim">Sim</label>
+
+    <input type="radio" id="identificarNao" name="identificacao" value="nao" onchange="verificarIdentificacao()">
+    <label for="identificarNao">Não</label>
+  </div>
+  
+  <!-- Container que será exibido ou ocultado -->
+  <div id="nomeContainer">
+    <label for="nome">Nome do aluno:</label>
+    <input type="text" id="nome" name="nome">
+  </div>
+
+  <!-- Formulário adaptado para enviar dados ao servidor Node.js -->
+  <form id="pesquisaForm" method="POST" action="http://localhost:3000/salvar">
+    <label for="tema">Escolha um tema:</label>
+    <select id="tema" name="tema">
+      <option value="aulas_e_professores">Aulas e Professores</option>
+      <option value="coordenacao">Coordenação</option>
+      <option value="infraestrutura">Infraestrutura</option>
+      <option value="modelo_academico">Modelo Acadêmico</option>
+      <option value="divulgacao_informacoes">Divulgação de Informações</option>
+      <option value="servicos_estudantis">Serviços Estudantis</option>
+      <option value="ulife">ULife</option>
+    </select>
+
+    <label for="aspectosPositivos">Aspectos positivos:</label>
+    <textarea id="aspectosPositivos" name="aspectosPositivos" rows="3" required></textarea>
+
+    <label for="aspectosMelhorias">Aspectos a melhorar:</label>
+    <textarea id="aspectosMelhorias" name="aspectosMelhorias" rows="3" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script src="salvar_dados.js"></script>
+</body>
+</html>
