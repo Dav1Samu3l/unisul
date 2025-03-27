@@ -24,7 +24,7 @@ const conn = mysql.createConnection({
     host: 'sql313.infinityfree.com',  // Host do MySQL fornecido pela InfinityFree
     user: 'if0_38620339',             // Nome do usuário do banco
     password: 'o5jPIM8fesIDE',        // Senha do banco
-    database: 'if0_38620339_XXX',     // Nome do banco de dados (substitua pelo nome correto do banco criado no painel)
+    database: 'if0_38620339_davii',     // Nome do banco de dados (substitua pelo nome correto do banco criado no painel)
 });
 
 // Verificar conexão
